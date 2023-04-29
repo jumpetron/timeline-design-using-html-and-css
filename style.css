@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #e8eff5;
+}
+
+.timeline{
+    max-width: 1200px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.timeline_box{
+    padding: 10px 40px;
+    width: 50%;
+    position: relative;
+}
+
+.timeline_content{
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.timeline_content h2{
+    color: #2e3d48;
+}
+
+.right{
+    left: 50%;
+}
+
+.timeline::after{
+    content: '';
+    position: absolute;
+    background: #c6d6dc;
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline_box img{
+    position: absolute;
+    top: 15px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #c6d6dc;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #fff;
+    z-index: 10;
+}
+
+.timeline_box.right img{
+    left: -20px;
+}
+
+.timeline_box::before{
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    border: 10px solid #fff;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.timeline_box.right::before{
+    left: 30px;
+    border: 10px solid #fff;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+@media only screen and (max-width: 768px) {
+    .timeline::after{
+        left: 31px;
+    }
+
+    .timeline_box{
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .right{
+        left: 0;
+    }
+
+    .timeline_box img, .timeline_box.right img{
+        left: 11px;
+    }
+
+    .timeline_box::before, .timeline_box.right::before{
+        left: 61px;
+        border-width: 10px 10px 10px 0;
+    border-color: transparent #fff transparent transparent;
+    }
+}
